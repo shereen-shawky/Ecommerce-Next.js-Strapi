@@ -49,10 +49,6 @@ export default function Header() {
             <Link className="text-gray-500 transition hover:text-gray-500/75" href="/"> Home </Link>
           </li>
           <li>
-            <a className="text-gray-500 transition hover:text-gray-500/75" href="/explore"> Explore </a>
-          </li>
-
-          <li>
             <a className="text-gray-500 transition hover:text-gray-500/75" href="/blog"> Blog </a>
           </li>
 
