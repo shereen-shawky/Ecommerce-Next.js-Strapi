@@ -44,7 +44,7 @@ export default function Cart({setOpenCart}) {
                 className="size-16 rounded-sm object-cover"
               />
               <div>
-                <h3 className="text-sm text-gray-900 line-clamp-1">{product.title}</h3>
+                <h3 className="text-sm text-gray-900 line-clamp-1">{product.name}</h3>
                 <p className="text-[10px] text-gray-600">Price: $ {product.price}</p>
                 <p className="text-[10px] text-gray-600">Category: {product.category}</p>
               </div>

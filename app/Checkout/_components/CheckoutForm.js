@@ -89,7 +89,7 @@ const CheckoutForm = ({ amount }) => {
 			body: JSON.stringify({
 				amount: amount,
 				email: user.primaryEmailAddress.emailAddress,
-				fullName: user.fullName
+				username: user.fullName
 			})
 		});
 		const data = await res.json();

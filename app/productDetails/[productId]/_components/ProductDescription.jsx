@@ -38,23 +38,46 @@ export default function ProductDescription({product}) {
   )}
   };
   return (
-    <div>
-      {product?.id ? 
-      <div className="max-w-xl space-y-4">
-      <h1 className="text-2xl font-bold text-gray-900">{product.title}</h1>
-      <h2 className='text-gray-500'> {product.category}</h2>
-      <p className="text-gray-700">{product.description}</p>
-      <span className="text-xl font-semibold text-green-600">${product.price}</span><br />
-      <button onClick={()=>{handleAddToCart()}} className="flex items-center px-14 py-4 mt-5 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-200">
-        <ShoppingCart className="mr-2" />
-        Add to Cart
-      </button>
-    </div>
-    :
-    <Skeleton/>
-    }
+    <div className="w-full max-w-xl p-6 rounded-xl ">
+  {product?.id ? (
+    <>
+      {/* Best Seller Badge */}
+      {product.isBestseller && (
+        <span className="inline-block mb-3 bg-yellow-400 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide shadow">
+          Best Seller
+        </span>
+      )}
 
-    </div>
+      {/* Title & Category */}
+      <h2 className="text-sm text-gray-500 uppercase mb-4 tracking-widest px-1">{product.category}</h2>
+
+      <h1 className="text-3xl font-bold text-gray-900 mb-1">{product.name}</h1>
+
+      {/* Description */}
+      <p className="text-gray-700 text-base leading-relaxed mb-5">{product.description}</p>
+
+      {/* Price */}
+      <div className="mb-6">
+        <span className="text-2xl font-bold text-green-600">${product.price}</span>
+      </div>
+
+      {/* Add to Cart Button */}
+      <button
+        onClick={handleAddToCart}
+        className="relative inline-flex items-center justify-center w-full px-6 py-3 overflow-hidden font-medium tracking-wide text-white transition duration-300 transform bg-black cursor-pointer rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+      >
+        <span className="absolute left-0 w-full h-0 transition-all duration-300 ease-out transform scale-y-0 bg-black  group-hover:h-full group-hover:scale-y-100"></span>
+        <span className="relative z-10 flex items-center justify-center gap-2">
+          <ShoppingCart className="w-5 h-5" />
+          Add to Cart
+        </span>
+      </button>
+    </>
+  ) : (
+    <Skeleton />
+  )}
+</div>
+
     
   );
 }

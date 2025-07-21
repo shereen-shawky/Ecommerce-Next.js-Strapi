@@ -5,7 +5,7 @@ import { CheckCircle } from 'lucide-react';
 
 export default function SuccessPage() {
   return (
-    <div className=" bg-gradient-to-br from-indigo-50 to-white px-4">
+    <div className=" bg-gradient-to-br from-indigo-50 to-white px-4 pt-20">
       <div className="flex justify-center align-center">
         <div className="my-20 sm:my-20 lg:my-30  bg-white shadow-xl rounded-2xl p-8 max-w-md w-full text-center border border-indigo-100">
           <CheckCircle className="text-indigo-600 mx-auto mb-4" size={60} />

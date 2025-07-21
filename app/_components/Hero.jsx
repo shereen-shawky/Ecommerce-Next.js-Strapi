@@ -1,37 +1,76 @@
-import React from 'react'
+'use client';
+import Image from 'next/image';
 
-export default function Hero() {
+export default function ProductShowcase() {
   return (
-    <section className=" bg-gradient-to-br from-indigo-50 via-white to-purple-100  lg:grid lg:h-screen lg:place-items-center">
-  <div className="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
-    <div className="mx-auto max-w-prose text-center">
-      <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
-        All Your Digital Products is 
-        <strong className="text-indigo-600"> One Click </strong>
-        Away
-      </h1>
-
-      <p className="mt-4 text-base text-pretty text-gray-700 sm:text-lg/relaxed">
-        Start Exploring State of the Art Assets Now!
-      </p>
-
-      <div className="mt-4 flex justify-center gap-4 sm:mt-6">
-        <a
-          className="inline-block rounded border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-indigo-700"
-          href="#"
-        >
-          Get Started
-        </a>
-
-        <a
-          className="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900"
-          href="#"
-        >
-          Learn More
-        </a>
+    <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6 md:mx-[120px] pt-20">
+      {/* Left Large Card */}
+      <div className="lg:col-span-2 relative rounded-2xl overflow-hidden bg-gradient-to-r from-purple-700 to-blue-600 text-white p-8 flex flex-col justify-between">
+        <div>
+          <div className="flex gap-3 text-sm font-semibold mb-2">
+            <span className="bg-white/20 px-3 py-1 rounded-full">New Release</span>
+            <span className="bg-white/20 px-3 py-1 rounded-full">Limited Edition</span>
+          </div>
+          <h2 className="text-4xl font-extrabold">Boso Pro X</h2>
+          <p className="mt-1 text-lg">Noise Cancelling Headphones</p>
+          <ul className="mt-4 space-y-1 text-sm text-white/80">
+            <li>• Wireless, Voice Assistant</li>
+            <li>• Low Latency Game Mode</li>
+            <li>• 40hr Battery Life</li>
+          </ul>
+        </div>
+        <div className="flex items-center justify-between mt-6">
+          <p className="text-2xl font-bold">$499</p>
+          <button className="bg-gradient-to-r from-blue-400 to-pink-500 px-5 py-2 rounded-full font-semibold">
+            Buy Now
+          </button>
+        </div>
+        <Image
+          src="/headphone.png" // ✅ Place your image in /public
+          alt="Boso Pro X"
+          width={400}
+          height={400}
+          className="absolute right-10 object-contain "
+        />
       </div>
+
+      <div className="flex flex-col md:flex-row lg:flex-col gap-6">
+  {/* Top Right Card */}
+  <div className="flex-1 relative rounded-2xl overflow-hidden bg-gray-900 text-white p-6 flex flex-col justify-between h-full">
+    <div>
+      <p className="text-sm text-white/70">XOMIA</p>
+      <h3 className="text-xl font-bold">Sport Water Resistance</h3>
+      <span className="inline-block mt-2 bg-white/10 px-3 py-1 rounded-full text-xs">
+        New &bull; 50m Waterproof
+      </span>
     </div>
+    <button className="mt-4 bg-white text-black px-4 py-2 rounded-full w-fit">Explore</button>
+    <Image
+      src="/smartwatch.png"
+      alt="Sport Watch"
+      width={200}
+      height={200}
+      className="absolute left-53 bottom-0.5 top-0.5 opacity-1%"
+    />
   </div>
-</section>
-  )
+
+  {/* Bottom Right Card */}
+  <div className="flex-1 relative rounded-2xl overflow-hidden bg-black text-white p-6 flex flex-col justify-between h-full">
+    <div>
+      <p className="text-sm text-white/70">OKODO</p>
+      <h3 className="text-xl font-bold">HERO 11+ BLACK</h3>
+      <p className="mt-1 text-white/60">FROM $169</p>
+    </div>
+    <button className="mt-4 bg-white text-black px-4 py-2 rounded-full w-fit">Shop</button>
+    <Image
+      src="/camera.png"
+      alt="Hero Black"
+      width={150}
+      height={150}
+      className="absolute left-53 bottom-0.5 top-10  opacity-1%"
+    />
+  </div>
+</div>
+    </section>
+  );
 }
