@@ -30,7 +30,7 @@ export default function ProductShowcase() {
           alt="Boso Pro X"
           width={400}
           height={400}
-          className="absolute right-0 w-[200px] sm:w-[250px] lg:w-[400px]"
+          className="hidden lg:block absolute bottom-4 right-8 w-[300px] xl:w-[400px] z-0"
         />
       </div>
 

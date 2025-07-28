@@ -1,5 +1,5 @@
 const apiKey = process.env.NEXT_PUBLIC_REST_API_KEY;
-const apiURL = "http://localhost:1337/api";
+const apiURL = "https://strapi-project-production-1067.up.railway.app/api";
 import axios from "axios";
 const axiosInstance = axios.create({
   baseURL: apiURL,

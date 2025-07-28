@@ -43,7 +43,7 @@ export default function Header() {
   return !isloggedIn &&(
     <header className="bg-white fixed top-0 w-full z-50 ">
   <div className="mx-auto flex max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8 ">
-    <img src="logo.jpg" width="90px" height="90px" className='rounded-full'/>
+    <img src="/logo.jpg" width="60px" height="60px" className='rounded-full'/>
 
     <div className="flex flex-1 items-center justify-end md:justify-between">
       <nav aria-label="Global" className="hidden md:block">
@@ -138,7 +138,7 @@ export default function Header() {
 
   {/* ✅ Animated Mobile Dropdown Menu */}
 <div
-  className={`md:hidden bg-white shadow px-4 transition-all duration-300 ease-in-out ${
+  className={`md:hidden bg-white shadow p-4 transition-all duration-300 ease-in-out ${
     mobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
   }`}
 >
