@@ -62,7 +62,7 @@ export default function WishlistPage() {
   }
 };
   if (loading) return <div className="p-8 text-center">Loading...</div>;
-  if (wishlists.length === 0) return <div className="p-8">Your wishlist is empty</div>;
+  if (wishlists.length === 0) return <div className="pt-25 text-center">Your wishlist is empty</div>;
 
   return (
     <div className="p-8 min-h-screen bg-gray-50 md:mx-[120px] pt-20">

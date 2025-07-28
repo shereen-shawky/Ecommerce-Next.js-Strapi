@@ -99,7 +99,7 @@ const [likedItems, setLikedItems] = useState([]);
 
 
   {loading ? (
-    <p>Loading...</p>
+    <p className='text-center'>Loading...</p>
   ) : products.length > 0 ? (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:mx-[120px] pt-5">
       {products.map((product) => (

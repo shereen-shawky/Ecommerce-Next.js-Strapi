@@ -4,16 +4,19 @@ import { ShoppingCart ,Heart} from 'lucide-react';
 import { useEffect, useState } from 'react'
 import { useContext } from 'react';
 import { CartContext } from '../_context/CartContext';
+import { usePathname } from 'next/navigation';
 import cartApis from '../_utils/cartApis';
 import React from 'react'
 import Cart from './Cart';
 import Link from 'next/link';
+import ContactUs from './../contact/page';
 export default function Header() {
     const {cart,setCart}=useContext(CartContext);
     const [openCart, setOpenCart] = useState(false);
     const {user} =useUser();
     const [isloggedIn,setisLoggedIn]=useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
       setisLoggedIn(window.location.href.includes('sign-in') || window.location.href.includes('sign-up'));}, []);
@@ -39,28 +42,53 @@ export default function Header() {
 
   return !isloggedIn &&(
     <header className="bg-white fixed top-0 w-full z-50 ">
-  <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8 ">
-    <img src="logo.webp" width="50px" height="50px" className='rounded-full'/>
+  <div className="mx-auto flex max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8 ">
+    <img src="logo.jpg" width="90px" height="90px" className='rounded-full'/>
 
     <div className="flex flex-1 items-center justify-end md:justify-between">
       <nav aria-label="Global" className="hidden md:block">
         <ul className="flex items-center gap-6 text-sm">
          <li>
-            <Link className="text-gray-500 transition hover:text-gray-500/75" href="/"> Home </Link>
+            <Link
+              href="/"
+              className={`text-sm transition hover:text-gray-500/75 ${
+                pathname === '/' ? 'font-bold text-black' : 'text-gray-500'
+              }`}
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <a className="text-gray-500 transition hover:text-gray-500/75" href="/blog"> Blog </a>
+            <Link
+              href="/blog"
+              className={`text-sm transition hover:text-gray-500/75 ${
+                pathname === '/blog' ? 'font-bold text-black' : 'text-gray-500'
+              }`}
+            >
+              Blog
+            </Link>
           </li>
-
           <li>
-            <a className="text-gray-500 transition hover:text-gray-500/75" href="/about"> About </a>
+            <Link
+              href="/about"
+              className={`text-sm transition hover:text-gray-500/75 ${
+                pathname === '/about' ? 'font-bold text-black' : 'text-gray-500'
+              }`}
+            >
+              About
+            </Link>
           </li>
-
           <li>
-            <a className="text-gray-500 transition hover:text-gray-500/75" href="/contact"> Contact </a>
+            <Link
+              href="/contact"
+              className={`text-sm transition hover:text-gray-500/75 ${
+                pathname === '/contact' ? 'font-bold text-black' : 'text-gray-500'
+              }`}
+            >
+              Contact
+            </Link>
           </li>
 
-        
         </ul>
       </nav>
 
@@ -110,17 +138,46 @@ export default function Header() {
 
   {/* ✅ Animated Mobile Dropdown Menu */}
 <div
-  className={`md:hidden bg-white shadow px-4 py-4 transition-all duration-300 ease-in-out ${
+  className={`md:hidden bg-white shadow px-4 transition-all duration-300 ease-in-out ${
     mobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
   }`}
 >
   <ul className="flex flex-col gap-4 text-sm">
-    <li><Link onClick={() => setMobileMenuOpen(false)} href="/">Home</Link></li>
-    <li><Link onClick={() => setMobileMenuOpen(false)} href="/explore">Explore</Link></li>
-    <li><Link onClick={() => setMobileMenuOpen(false)} href="/blog">Blog</Link></li>
-    <li><Link onClick={() => setMobileMenuOpen(false)} href="/about">About</Link></li>
-    <li><Link onClick={() => setMobileMenuOpen(false)} href="/contact">Contact</Link></li>
-  </ul>
+    <li>
+  <Link
+    href="/"
+    onClick={() => setMobileMenuOpen(false)}
+    className={pathname === '/' ? 'font-bold text-black' : ''}
+  >
+    Home
+  </Link>
+</li>
+
+<li>
+  <Link
+    href="/"
+    onClick={() => setMobileMenuOpen(false)}
+    className={pathname === '/blog' ? 'font-bold text-black' : ''}
+  >
+    Blog
+  </Link>
+</li><li>
+  <Link
+    href="/"
+    onClick={() => setMobileMenuOpen(false)}
+    className={pathname === '/About' ? 'font-bold text-black' : ''}
+  >
+    About
+  </Link>
+</li> <li>
+  <Link
+    href="/"
+    onClick={() => setMobileMenuOpen(false)}
+    className={pathname === '/contact' ? 'font-bold text-black' : ''}
+  >
+    Contact
+  </Link>
+</li>  </ul>
 </div>
 
 </header>

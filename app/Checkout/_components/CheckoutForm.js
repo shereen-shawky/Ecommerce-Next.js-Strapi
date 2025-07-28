@@ -97,7 +97,7 @@ const CheckoutForm = ({ amount }) => {
 	}
 	return (
 		<form onSubmit={handleSubmit}>
-			<div className='mx-32 md:mx-[320px] mt-12'><PaymentElement />
+			<div className='mx-10 md:mx-[120px] lg:mx-[150px] my-25'><PaymentElement />
 				<button className='w-full p-2 mt-4 text-white rounded-md bg-indigo-500'>Submit</button>
 			</div>
 

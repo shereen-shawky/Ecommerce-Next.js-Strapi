@@ -19,7 +19,7 @@ const [isloggedIn,setisLoggedIn]=useState(false);
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company info */}
           <div>
-            <h2 className="text-xl font-bold mb-3">Elec</h2>
+            <h2 className="text-xl font-bold mb-3"><span className="text-blue-300">TECH</span> DEAL</h2>
             <p className="text-sm text-gray-300">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry standard dummy text ever since.
             </p>
