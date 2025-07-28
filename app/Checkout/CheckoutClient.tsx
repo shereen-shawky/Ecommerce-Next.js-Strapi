@@ -42,12 +42,12 @@ export default function CheckoutClient() {
   }
 
 
-const options: StripeElementsOptions = {
-  clientSecret: clientSecret!,
+const options = {
+  clientSecret,
   appearance: {
     theme: 'flat',
   },
-};
+} as StripeElementsOptions;
 
 return (
   <Elements stripe={stripePromise} options={options}>
