@@ -33,13 +33,13 @@ const CheckoutForm = ({ amount }) => {
 			handleError(submitError);
 			return;
 		}
-		const res = await fetch('/api/create-intent', {
+		const res = await fetch('/api/create-payment-intent', {
 			method: 'POST',
 			body: JSON.stringify({
 				amount: amount
 			})
 		})
-		const clientSecret = await res.json()
+		const {clientSecret} = await res.json()
 
 		const result = await stripe.confirmPayment({
 			//`Elements` instance that was used to create the Payment Element
